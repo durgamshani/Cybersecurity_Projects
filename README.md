@@ -1,35 +1,46 @@
-SSH Security Monitoring Dashboard 🛡️
+SSH Security Monitoring Dashboard 🛡️🔍
 Overview
-This project is a Security Information and Event Management (SIEM) implementation designed to monitor, visualize, and analyze SSH authentication logs. Built using Splunk Enterprise, it transforms raw Linux server logs into actionable security intelligence, helping SOC analysts detect potential threats such as brute force attacks and unauthorized access attempts in real-time.
+SIEM project converting Linux SSH auth logs into real-time threat intel via Splunk Enterprise. Ideal for SOC analysts spotting brute force, unauthorized access, and anomalies through dynamic visualizations.
+​
 
 🚀 Key Features
-Brute Force Detection: Uses statistical thresholds to identify IP addresses with high-volume failed login attempts.
+Brute Force Alerts 💥: Highlights IPs with excessive failed attempts via stats thresholds
 
-Geospatial Intelligence: Visualizes the physical origin of attacks using Choropleth maps to spot anomalous traffic from non-business regions.
+Geo Mapping 🌍: Choropleth visuals tracing attacks to global hotspots
 
-Threat Visualization: Interactive dashboards displaying Failed vs. Successful login trends and invalid user attempts.
+Trend Analysis 📈: Failed vs. successful ratios and targeted invalid users
 
-Custom SPL Logic: meaningful data parsing and extraction using complex Search Processing Language queries.
+SPL Intelligence ⚙️: Advanced parsing with location/geo functions for precise insights
 
-🛠️ Technologies Used
-Platform: Splunk Enterprise
+🛠️ Tech Stack
+Core: Splunk Enterprise Free
 
-Data Format: JSON (Linux SSH Logs)
+Logs: JSON from /var/log/auth.log
 
-Query Language: SPL (stats, top, iplocation, geom)
+Viz Tools: Panels, gauges, heatmaps, timelines
 
-📊 Dashboard Insights
-The dashboard is divided into three analytical zones:
+Extras: iplocation/geom for spatial data
 
-Authentication Overview: KPIs for total events and success/failure rates.
+📊 Dashboard Layout
+Authentication KPIs 🎯
+Total events | Success rate: 23% ✅ | Failure spikes: 77% ❌ | Risk score gauge
 
-Login Trends: Bar charts identifying usernames targeted by attackers.
+Attack Patterns ⚠️
 
-Geo-Tracking: Map visualizations correlating IP addresses to specific countries.
+Top targeted usernames (bar chart)
 
-🔧 How to Run
-Ingest the ssh_logs.json file into a Splunk Index.
+Invalid login attempts (pie chart)
 
-Copy the SPL queries from the /queries folder (or use the provided XML source).
+Attacker IP leaderboard (table)
 
-Open the dashboard in Splunk to view the visualizations.
+Global Threat Map 🗺️
+Interactive choropleth: Attack volume by country/region clusters
+
+🚀 Setup Guide
+Upload ssh_logs.json to Splunk index 🗂️
+
+Import dashboard XML from repo 📥
+
+Launch in Search & Reporting app—live viz ready! ▶️
+
+
